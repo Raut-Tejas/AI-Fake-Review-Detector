@@ -7,7 +7,7 @@
 
 ---
 
-# 📖 Overview
+# 📖 Summary
 
 AI Fake Review Detector is an Artificial Intelligence project designed to identify whether an online review is **genuine** or **fake** using **Natural Language Processing (NLP)** and **Machine Learning**.
 
