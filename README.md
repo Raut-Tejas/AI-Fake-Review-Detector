@@ -1,343 +1,124 @@
-# 🤖 AI Fake Review Detector
+# AI Fake Review Detector
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
-![Machine Learning](https://img.shields.io/badge/Machine-Learning-green)
-![NLP](https://img.shields.io/badge/NLP-Natural%20Language%20Processing-orange)
-![Status](https://img.shields.io/badge/Project-Concept%20Design-success)
+Final project for the Building AI course
 
----
+## Summary
 
-# 📖 Summary
+AI Fake Review Detector is an AI-powered system that identifies whether an online review is genuine or fake using Natural Language Processing (NLP) and Machine Learning. The goal is to improve trust in online shopping platforms by helping users recognize suspicious reviews before making purchasing decisions.
 
-AI Fake Review Detector is an Artificial Intelligence project designed to identify whether an online review is **genuine** or **fake** using **Natural Language Processing (NLP)** and **Machine Learning**.
+## Background
 
-Fake reviews have become a serious problem on e-commerce platforms, hotel booking websites, restaurant review sites, and online marketplaces. They can mislead customers, damage business reputations, and reduce trust in online shopping.
+Online reviews have become one of the most important factors influencing customer purchasing decisions. Unfortunately, fake reviews are increasingly common and can mislead customers, unfairly promote products, or damage the reputation of competitors.
 
-This project aims to develop an intelligent system that automatically analyzes review text and predicts whether it is likely to be fake.
+This project aims to help customers and businesses by automatically identifying suspicious reviews.
 
----
+Problems this project addresses:
 
-# 🎯 Problem Statement
+* Fake reviews that manipulate product ratings.
+* Customers buying poor-quality products because of misleading reviews.
+* Businesses losing trust due to dishonest competitors.
+* The difficulty of manually checking thousands of online reviews.
 
-Millions of online reviews are posted every day. While many are written by real customers, some are intentionally created to:
+My personal motivation comes from seeing how difficult it is to know whether online reviews can be trusted. Artificial Intelligence can assist users by analyzing review patterns much faster than humans.
 
-- Increase product ratings
-- Promote low-quality products
-- Damage competitors
-- Manipulate customer decisions
+## How is it used?
 
-Manually detecting fake reviews is difficult because they often appear similar to genuine reviews.
+A user enters or uploads the text of an online review into the system.
 
-An AI-powered detection system can help identify suspicious reviews automatically.
+The AI model processes the review using Natural Language Processing techniques and predicts whether it is likely to be genuine or fake. The system also provides a confidence score to indicate how certain the prediction is.
 
----
+Possible users include:
 
-# 💡 Proposed Solution
+* Online shoppers
+* E-commerce companies
+* Hotel booking websites
+* Restaurant review platforms
+* Marketplace administrators
 
-The AI Fake Review Detector will analyze the content of a review and classify it into one of two categories:
-
-✅ Genuine Review
-
-❌ Fake Review
-
-The prediction is based on patterns learned from thousands of labeled reviews.
-
-The system examines:
-
-- Review length
-- Writing style
-- Word repetition
-- Sentiment
-- Suspicious keywords
-- Grammar patterns
-- Unnatural language usage
-
----
-
-# 🧠 Artificial Intelligence Methods
-
-The project uses **Natural Language Processing (NLP)** and **Supervised Machine Learning**.
-
-## Text Preprocessing
-
-Before training the model, review text is cleaned using:
-
-- Lowercase conversion
-- Removing punctuation
-- Removing stop words
-- Tokenization
-- Lemmatization
-
----
-
-## Feature Extraction
-
-Possible methods include:
-
-- TF-IDF (Term Frequency–Inverse Document Frequency)
-- Bag of Words
-- Word Embeddings (Future Improvement)
-
----
-
-## Machine Learning Models
-
-Possible algorithms:
-
-- Logistic Regression
-- Naive Bayes
-- Support Vector Machine (SVM)
-- Random Forest
-
-Future versions can use:
-
-- BERT
-- RoBERTa
-- DistilBERT
-
-for improved accuracy.
-
----
-
-# 📊 Dataset
-
-Possible datasets include:
-
-- Fake Reviews Dataset (Kaggle)
-- Yelp Reviews Dataset
-- Amazon Reviews Dataset
-- Hotel Review Dataset
-
-Each review may contain:
-
-- Review text
-- Rating
-- Review title
-- Verified purchase
-- Fake/Genuine label
-
----
-
-# ⚙️ Project Workflow
+Example workflow:
 
 ```
-                User Review
-                     │
-                     ▼
-           Text Preprocessing
-                     │
-                     ▼
-          Feature Extraction
-               (TF-IDF)
-                     │
-                     ▼
-       Machine Learning Model
-                     │
-                     ▼
-        Fake or Genuine Review
-                     │
-                     ▼
-          Confidence Score
+User enters a review
+        │
+        ▼
+Text preprocessing
+        │
+        ▼
+Feature extraction (TF-IDF)
+        │
+        ▼
+Machine Learning model
+        │
+        ▼
+Prediction
+        │
+        ▼
+Fake or Genuine
 ```
 
----
+## Data sources and AI methods
 
-# 🚀 Features
+The project can be trained using publicly available review datasets.
 
-- Detect fake reviews
-- Predict review authenticity
-- Confidence percentage
-- NLP-based text processing
-- Machine Learning classification
-- User-friendly interface
-- Fast prediction
+Possible data sources include:
 
----
+* Kaggle Fake Review Dataset
+* Yelp Open Dataset
+* Amazon Product Reviews
+* Hotel Review Dataset
 
-# 👨‍💻 Technologies Used
+The AI methods used include:
 
-| Technology | Purpose |
-|------------|---------|
-| Python | Programming Language |
-| Pandas | Data Processing |
-| NumPy | Numerical Computing |
-| Scikit-learn | Machine Learning |
-| NLTK | Natural Language Processing |
-| Flask | Web Application |
-| HTML/CSS | Frontend |
+* Natural Language Processing (NLP)
+* Text preprocessing
+* TF-IDF (Term Frequency–Inverse Document Frequency)
+* Supervised Machine Learning
+* Logistic Regression
+* Naive Bayes
+* Support Vector Machine (SVM)
 
----
+The model is trained using labeled reviews where each review is marked as either **Fake** or **Genuine**.
 
-# 📁 Project Structure
+| AI Technique | Purpose |
+|---------------|---------|
+| NLP | Understand review text |
+| TF-IDF | Convert text into numerical features |
+| Logistic Regression | Binary classification |
+| Naive Bayes | Text classification |
+| SVM | Alternative classifier |
 
-```
-AI-Fake-Review-Detector/
-│
-├── dataset/
-│      reviews.csv
-│
-├── models/
-│      trained_model.pkl
-│
-├── notebooks/
-│      model_training.ipynb
-│
-├── app.py
-├── train.py
-├── predict.py
-├── requirements.txt
-├── README.md
-└── screenshots/
-```
+## Challenges
 
----
+This project has several limitations.
 
-# 🛠 How It Works
+* AI predictions are not always correct.
+* Fake reviews continuously evolve, making detection more difficult.
+* Some genuine reviews may be incorrectly classified as fake.
+* Large, high-quality labeled datasets are required for good performance.
+* Ethical considerations should be taken into account because incorrectly labeling a genuine review as fake could negatively affect honest users or businesses.
 
-### Step 1
+The system should therefore assist human moderators rather than replace them completely.
 
-The user enters a review.
+## What next?
 
-Example:
+This project could be improved in many ways.
 
-```
-This phone is amazing!
-Best purchase ever.
-Highly recommended.
-```
+Possible future developments include:
 
----
+* Support for multiple languages.
+* Browser extension for shopping websites.
+* Real-time fake review detection.
+* Deep learning models such as BERT.
+* Explainable AI to show why a review was classified as fake.
+* Detection of fake reviewer accounts in addition to fake reviews.
+* Mobile application for consumers.
 
-### Step 2
+To build a production-ready version, additional datasets, cloud deployment, and advanced deep learning knowledge would be required.
 
-The review is cleaned.
+## Acknowledgments
 
-Example:
-
-```
-phone amazing best purchase highly recommended
-```
-
----
-
-### Step 3
-
-The cleaned text is converted into numerical features using TF-IDF.
-
----
-
-### Step 4
-
-The trained machine learning model predicts whether the review is:
-
-- Genuine
-- Fake
-
----
-
-### Step 5
-
-The result is displayed.
-
-Example:
-
-```
-Prediction:
-
-✔ Genuine Review
-
-Confidence:
-94.8%
-```
-
----
-
-# 📈 Future Improvements
-
-Future versions of this project may include:
-
-- Deep Learning (BERT)
-- Chrome Browser Extension
-- Real-time fake review detection
-- Amazon integration
-- Flipkart integration
-- Explainable AI
-- Multilingual review detection
-- Voice review analysis
-- Fake reviewer detection
-- Dashboard for businesses
-
----
-
-# ⚠ Challenges
-
-Some challenges include:
-
-- Limited labeled datasets
-- New spam techniques
-- Sarcasm detection
-- Short reviews
-- Domain-specific vocabulary
-- Language diversity
-
----
-
-# 🌍 Applications
-
-This system can be used by:
-
-- Amazon
-- Flipkart
-- eBay
-- Booking.com
-- TripAdvisor
-- Google Reviews
-- Restaurant review websites
-- Product review platforms
-
----
-
-# 📚 Learning Outcomes
-
-Through this project, I aim to learn:
-
-- Natural Language Processing
-- Machine Learning
-- Text Classification
-- Feature Engineering
-- Model Evaluation
-- Data Cleaning
-- AI Ethics
-
----
-
-# 🤝 Ethical Considerations
-
-The prediction should be considered an AI-generated recommendation rather than a final decision.
-
-A review classified as "Fake" should still be manually verified before any action is taken.
-
----
-
-# 🔮 Future Scope
-
-Potential enhancements include:
-
-- Fake reviewer detection
-- Explainable AI
-- Sentiment analysis
-- Browser extension
-- Mobile application
-- Multi-language support
-- Deep Learning implementation
-- Cloud deployment
-
----
-
-# 📌 Conclusion
-
-AI Fake Review Detector demonstrates how Artificial Intelligence can improve trust in online marketplaces by automatically detecting suspicious reviews.
-
-Using Natural Language Processing and Machine Learning, the system helps customers make informed purchasing decisions while supporting businesses in maintaining authentic review systems.
-
----
+* Building AI course by the University of Helsinki and Reaktor.
+* Kaggle for publicly available datasets.
+* Scikit-learn documentation.
+* NLTK documentation.
+* Python community for open-source machine learning tools.
